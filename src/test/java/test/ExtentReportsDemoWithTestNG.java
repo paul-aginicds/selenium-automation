@@ -49,12 +49,12 @@ public class ExtentReportsDemoWithTestNG {
 	@Test
 	public void test1() throws Exception {
 		
-		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
+		ExtentTest test = extent.createTest("Google Test", "Search test of google");
 		
 		driver.get("https://google.com");
 		test.pass("Navigated to google.com");
 
-		driver.findElement(By.name("q")).sendKeys("AginicDS Paul Thornton");
+		driver.findElement(By.name("q")).sendKeys("AginicDS");
 		test.pass("Entered text in Searchbox");
 
 		driver.findElement(By.name("btnK")).sendKeys(Keys.ENTER);
@@ -70,10 +70,51 @@ public class ExtentReportsDemoWithTestNG {
 	@Test
 	public void test2() throws Exception {
 		
-		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
+		ExtentTest test = extent.createTest("AginicDS Smoke Test", "Smoke test of aginicds.com");
 		
 		driver.get("http://aginicds.com");
 		test.pass("Navigated to aginicds.com");
+
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+		test.pass("What we offer");
+
+		driver.findElement(By.xpath("//a[contains(text(),'Digital transformation')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Sustainable, scalable agile delivery')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+
+
+		driver.findElement(By.xpath("//a[contains(text(),'Building great products & experiences')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+
+
+		driver.findElement(By.xpath("//a[contains(text(),'Successful delivery leadership')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+
+
+		driver.findElement(By.xpath("//a[contains(text(),'Understanding agile techniques')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+
+		driver.findElement(By.xpath("//a[contains(text(),'Community events')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+		
+		test.pass("What we offer section test successful.");
+
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]")).click();       
+		
+		
+		
 	}
 		
 	@AfterTest
