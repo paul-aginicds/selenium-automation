@@ -66,6 +66,15 @@ public class ExtentReportsDemoWithTestNG {
         //Assert.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
         //test.addScreenCaptureFromPath("screenshot.png");
 	}
+	
+	@Test
+	public void test2() throws Exception {
+		
+		ExtentTest test = extent.createTest("MyFirstTest", "Sample description");
+		
+		driver.get("http://aginicds.com");
+		test.pass("Navigated to aginicds.com");
+	}
 		
 	@AfterTest
 	public void tearDownTest() {
