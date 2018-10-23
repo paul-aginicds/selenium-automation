@@ -59,7 +59,7 @@ public class ExtentReportsDemoWithTestNG {
 
 		driver.findElement(By.name("btnK")).sendKeys(Keys.ENTER);
 		test.pass("Pressed keyboard enter key");
-          
+          //
 		
 		test.log(Status.INFO, "This step shows usage of log(status, details)");
         test.info("This step shows usage of info(details)");
