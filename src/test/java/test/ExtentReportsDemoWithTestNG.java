@@ -5,8 +5,10 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -82,22 +84,22 @@ public class ExtentReportsDemoWithTestNG {
 		test.pass("");
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
 
-		
 		driver.findElement(By.xpath("//a[contains(text(),'Sustainable, scalable agile delivery')]")).click();       
 		test.pass("");
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
 
 
+		
 		driver.findElement(By.xpath("//a[contains(text(),'Building great products & experiences')]")).click();       
 		test.pass("");
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-
 
 		driver.findElement(By.xpath("//a[contains(text(),'Successful delivery leadership')]")).click();       
 		test.pass("");
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
 
 
+		
 		driver.findElement(By.xpath("//a[contains(text(),'Understanding agile techniques')]")).click();       
 		test.pass("");
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
@@ -111,9 +113,15 @@ public class ExtentReportsDemoWithTestNG {
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();       
 		test.pass("");
-		driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]")).click();       
 		
 		
+		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]"));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(500); 
+		
+		//driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]")).click();       
+		test.pass("");
+		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();       
 		
 	}
 		
