@@ -22,19 +22,17 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-public class ExtentReportsDemoWithTestNG {
+public class AginicDS_SmokeTest_Demo {
 
 	private static ExtentReports extent;
 	private static ExtentHtmlReporter htmlReporter;
-    //private static ThreadLocal parentTest = new ThreadLocal();
-    //private static ThreadLocal test = new ThreadLocal();
 	
 	WebDriver driver;
 	
 	@BeforeMethod
 	@BeforeSuite
 	public void setUp() {
-		htmlReporter = new ExtentHtmlReporter("extent.html");
+		htmlReporter = new ExtentHtmlReporter("AginicDS_SmokeTest_Report.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 	}
@@ -48,29 +46,9 @@ public class ExtentReportsDemoWithTestNG {
 		driver = new ChromeDriver();
 	}
 	
-	@Test
-	public void test1() throws Exception {
-		
-		ExtentTest test = extent.createTest("Google Test", "Search test of google");
-		
-		driver.get("https://google.com");
-		test.pass("Navigated to google.com");
-
-		driver.findElement(By.name("q")).sendKeys("AginicDS");
-		test.pass("Entered text in Searchbox");
-
-		driver.findElement(By.name("btnK")).sendKeys(Keys.ENTER);
-		test.pass("Pressed keyboard enter key");
-          //
-		
-		test.log(Status.INFO, "This step shows usage of log(status, details)");
-        test.info("This step shows usage of info(details)");
-        //Assert.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
-        //test.addScreenCaptureFromPath("screenshot.png");
-	}
 	
 	@Test
-	public void test2() throws Exception {
+	public void testAginicDS_SmokeTest() throws Exception {
 		
 		ExtentTest test = extent.createTest("AginicDS Smoke Test", "Smoke test of aginicds.com");
 		
@@ -87,8 +65,6 @@ public class ExtentReportsDemoWithTestNG {
 		driver.findElement(By.xpath("//a[contains(text(),'Sustainable, scalable agile delivery')]")).click();       
 		test.pass("");
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-
-
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Building great products & experiences')]")).click();       
 		test.pass("");
@@ -97,8 +73,6 @@ public class ExtentReportsDemoWithTestNG {
 		driver.findElement(By.xpath("//a[contains(text(),'Successful delivery leadership')]")).click();       
 		test.pass("");
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-
-
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Understanding agile techniques')]")).click();       
 		test.pass("");
@@ -110,10 +84,8 @@ public class ExtentReportsDemoWithTestNG {
 		
 		test.pass("What we offer section test successful.");
 
-		
 		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();       
-		test.pass("");
-		
+		test.pass("");		
 		
 		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -121,7 +93,7 @@ public class ExtentReportsDemoWithTestNG {
 		
 		//driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]")).click();       
 		test.pass("");
-		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();       
+		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();   
 		
 	}
 		
