@@ -42,7 +42,7 @@ public class PowerBI_Test_Demo {
 	}
 	
 	@Test
-	public void testGoogle() throws Exception {
+	public void testPowerBIapp() throws Exception {
 		
 		ExtentTest test = extent.createTest("PowerBI Test", "PowerBI Smoke Test Demo");
 		
