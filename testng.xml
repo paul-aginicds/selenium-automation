@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="test.AginicDS_SmokeTest_Demo"/>
+      <class name="test.PowerBI_Test_Demo"/>
     </classes>
   </test> 
 </suite> 
