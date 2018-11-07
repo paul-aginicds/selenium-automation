@@ -1,17 +1,25 @@
 package test;
 
+
+import java.util.regex.Pattern;
+import java.util.concurrent.TimeUnit;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.openqa.selenium.support.ui.Select;
+
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -37,8 +45,16 @@ public class PowerBI_Test_Demo {
 
 		String projectPath = System.getProperty("user.dir");
 		System.out.println("projectPath : " + projectPath);
-		System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver/chromedriver");
-		driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver/chromedriver");
+		//System.setProperty("webdriver.firefox.driver", projectPath + "/drivers/chromedriver/chromedriver");
+		//driver = new ChromeDriver();
+		//driver = new FirefoxDriver();
+		
+		System.setProperty("webdriver.gecko.driver",projectPath+"/drivers/geckodriver/geckodriver");
+		System.setProperty("webdriver.firefox.bin", "/Applications/Firefox.app/Contents/MacOS/firefox-bin");		
+		driver = new FirefoxDriver();		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		
 	}
 	
 	@Test
@@ -46,8 +62,27 @@ public class PowerBI_Test_Demo {
 		
 		ExtentTest test = extent.createTest("PowerBI Test", "PowerBI Smoke Test Demo");
 		
+		
 		driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
+		
 		test.pass("Navigated to app.powerbi.com demo dashboard");
+
+		
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[16]/following::div[3]")).click();
+	    test.pass("Test step 2");	    
+	    
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[9]")).click();
+	    test.pass("Test step 3");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[9]")).click();
+	    test.pass("Test step 4");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
+	    test.pass("Test step 5");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
+	    test.pass("Test step 6");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - hospital'])[1]/following::span[1]")).click();
+	    test.pass("Test step 7");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - hospital'])[1]/following::span[1]")).click();
+	    test.pass("Test step 8");
 		
 		
 		//test.log(Status.INFO, "This step shows usage of log(status, details)");
@@ -60,7 +95,7 @@ public class PowerBI_Test_Demo {
 	public void tearDownTest() {
 		driver.close();
 		driver.quit();
-		System.out.println("Test Completed Successfully");
+		System.out.println("PowerBI Automated Test Completed Successfully");
 	}
 	
 	@AfterMethod
