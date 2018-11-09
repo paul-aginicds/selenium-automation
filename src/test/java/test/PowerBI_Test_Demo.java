@@ -24,6 +24,8 @@ public class PowerBI_Test_Demo {
 
 	private static ExtentReports extent;
 	private static ExtentHtmlReporter htmlReporter;
+	private static ExtentTest test;
+
 	
 	WebDriver driver;
 	
@@ -51,29 +53,33 @@ public class PowerBI_Test_Demo {
 	@Test
 	public void testPowerBIapp() throws Exception {
 		
-		ExtentTest test = extent.createTest("PowerBI Test", "PowerBI Smoke Test Demo");
+		test = extent.createTest("PowerBI Test", "PowerBI Smoke Test Demo");
 		
 		
 		driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
-		
 		test.pass("Navigated to app.powerbi.com demo dashboard");
-
+		Thread.sleep(1000); 
 		
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[16]/following::div[3]")).click();
-	    test.pass("Test step 2");	    
+	    test.pass("Checking 'Arrival Mode' - Filter Test 1");	    
 	    
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[9]")).click();
-	    test.pass("Test step 3");
+	    test.pass("Checking 'Arrival Mode' - Filter Test 2");	    
+
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[9]")).click();
-	    test.pass("Test step 4");
+	    test.pass("Checking 'Arrival Mode' - Filter Test 3");	    
+	    
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
-	    test.pass("Test step 5");
+	    test.pass("Checking 'Arrival Mode' - Filter Test 4");	    
+	    
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
-	    test.pass("Test step 6");
+	    test.pass("Checking 'Arrival Mode' - Filter Test 5");	    
+	    
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - hospital'])[1]/following::span[1]")).click();
-	    test.pass("Test step 7");
+	    test.pass("Checking 'Arrival Mode' - Filter Test 6");	    
+	    
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - hospital'])[1]/following::span[1]")).click();
-	    test.pass("Test step 8");
+	    test.pass("Checking 'Arrival Mode' - Filter Test 7");	    
 		
 		
 		//test.log(Status.INFO, "This step shows usage of log(status, details)");
@@ -86,7 +92,7 @@ public class PowerBI_Test_Demo {
 	public void tearDownTest() {
 		driver.close();
 		//driver.quit();
-		System.out.println("PowerBI Automated Test Completed Successfully");
+		test.pass("PowerBI automated test completed successfully! :)");
 	}
 	
 	@AfterMethod
