@@ -85,7 +85,7 @@ public class PowerBI_Test_Demo {
 	@AfterTest
 	public void tearDownTest() {
 		driver.close();
-		driver.quit();
+		//driver.quit();
 		System.out.println("PowerBI Automated Test Completed Successfully");
 	}
 	
