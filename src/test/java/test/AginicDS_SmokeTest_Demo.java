@@ -21,7 +21,8 @@ public class AginicDS_SmokeTest_Demo {
 
 	private static ExtentReports extent;
 	private static ExtentHtmlReporter htmlReporter;
-	 
+	private static ExtentTest test;
+
 	WebDriver driver;
 	
 	@BeforeMethod
@@ -45,7 +46,7 @@ public class AginicDS_SmokeTest_Demo {
 	@Test
 	public void testAginicDS_SmokeTest() throws Exception {
 		
-		ExtentTest test = extent.createTest("AginicDS Smoke Test", "Smoke test of aginicds.com");
+		test = extent.createTest("AginicDS Smoke Test", "Smoke test of aginicds.com");
 		
 		driver.get("http://aginicds.com");
 		test.pass("Navigated to aginicds.com");
@@ -54,49 +55,38 @@ public class AginicDS_SmokeTest_Demo {
 		test.pass("Checking section 'What we offer' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'Digital transformation')]")).click();       
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Digital transformation' - step successful.");
 		
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-
 		driver.findElement(By.xpath("//a[contains(text(),'Sustainable, scalable agile delivery')]")).click();       
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Sustainable, scalable agile delivery' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-		test.pass("Checking section '' - step successful.");
-		
 		driver.findElement(By.xpath("//a[contains(text(),'Building great products & experiences')]")).click();       
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Building great products & experiences' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-
 		driver.findElement(By.xpath("//a[contains(text(),'Successful delivery leadership')]")).click();       
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Successful delivery leadership'' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-		
 		driver.findElement(By.xpath("//a[contains(text(),'Understanding agile techniques')]")).click();       
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Understanding agile techniques' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-		test.pass("Checking section '' - step successful.");
-
 		driver.findElement(By.xpath("//a[contains(text(),'Community events')]")).click();       
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Community events' - step successful.");
 		
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-		test.pass("Checking section 'What we offer' - step successful.");
-
 		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();       
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Our stories' - step successful.");
 		
 		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(500); 
 		
-		test.pass("Checking blog post - step successful.");
-
 		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();   
-		test.pass("Checking section '' - step successful.");
+		test.pass("Checking section 'Our stories' - step successful.");
 		
 	}
 		
@@ -104,7 +94,7 @@ public class AginicDS_SmokeTest_Demo {
 	public void tearDownTest() {
 		driver.close();
 		driver.quit();
-		System.out.println("Smoke test completed successfully :)");
+		test.pass("Smoke test completed successfully :)");
 	}
 	
 	@AfterMethod
