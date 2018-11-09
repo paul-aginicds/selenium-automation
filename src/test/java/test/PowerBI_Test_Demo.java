@@ -45,10 +45,6 @@ public class PowerBI_Test_Demo {
 
 		String projectPath = System.getProperty("user.dir");
 		System.out.println("projectPath : " + projectPath);
-		//System.setProperty("webdriver.chrome.driver", projectPath + "/drivers/chromedriver/chromedriver");
-		//System.setProperty("webdriver.firefox.driver", projectPath + "/drivers/chromedriver/chromedriver");
-		//driver = new ChromeDriver();
-		//driver = new FirefoxDriver();
 		
 		System.setProperty("webdriver.gecko.driver",projectPath+"/drivers/geckodriver/geckodriver");
 		System.setProperty("webdriver.firefox.bin", "/Applications/Firefox.app/Contents/MacOS/firefox-bin");		
