@@ -21,7 +21,7 @@ public class AginicDS_SmokeTest_Demo {
 
 	private static ExtentReports extent;
 	private static ExtentHtmlReporter htmlReporter;
-	
+	 
 	WebDriver driver;
 	
 	@BeforeMethod

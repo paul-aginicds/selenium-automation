@@ -34,7 +34,7 @@ public class PowerBI_Test_Demo {
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 	}
-	
+	 
 	@BeforeTest
 	public void setUpTest() {
 
