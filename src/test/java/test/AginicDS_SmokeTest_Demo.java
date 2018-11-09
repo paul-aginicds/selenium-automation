@@ -104,7 +104,7 @@ public class AginicDS_SmokeTest_Demo {
 	public void tearDownTest() {
 		driver.close();
 		driver.quit();
-		System.out.println("Test Completed Successfully");
+		System.out.println("Smoke test completed successfully :)");
 	}
 	
 	@AfterMethod
