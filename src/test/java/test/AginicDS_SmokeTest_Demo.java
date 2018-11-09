@@ -27,7 +27,7 @@ public class AginicDS_SmokeTest_Demo {
 	@BeforeMethod
 	@BeforeSuite
 	public void setUp() {
-		htmlReporter = new ExtentHtmlReporter("AginicDS_SmokeTest_Report.html");
+		htmlReporter = new ExtentHtmlReporter("reports/AginicDS_SmokeTest_Report.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 	}

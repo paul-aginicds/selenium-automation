@@ -30,7 +30,7 @@ public class PowerBI_Test_Demo {
 	@BeforeMethod
 	@BeforeSuite
 	public void setUp() {
-		htmlReporter = new ExtentHtmlReporter("PowerBI_Test_Report.html");
+		htmlReporter = new ExtentHtmlReporter("reports/PowerBI_Test_Report.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 	}
