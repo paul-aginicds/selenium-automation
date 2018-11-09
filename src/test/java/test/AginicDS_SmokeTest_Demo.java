@@ -51,44 +51,52 @@ public class AginicDS_SmokeTest_Demo {
 		test.pass("Navigated to aginicds.com");
 
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
-		test.pass("What we offer");
+		test.pass("Checking section 'What we offer' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'Digital transformation')]")).click();       
-		test.pass("");
+		test.pass("Checking section '' - step successful.");
+		
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
 
 		driver.findElement(By.xpath("//a[contains(text(),'Sustainable, scalable agile delivery')]")).click();       
-		test.pass("");
+		test.pass("Checking section '' - step successful.");
+
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+		test.pass("Checking section '' - step successful.");
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Building great products & experiences')]")).click();       
-		test.pass("");
+		test.pass("Checking section '' - step successful.");
+
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
 
 		driver.findElement(By.xpath("//a[contains(text(),'Successful delivery leadership')]")).click();       
-		test.pass("");
+		test.pass("Checking section '' - step successful.");
+
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
 		
 		driver.findElement(By.xpath("//a[contains(text(),'Understanding agile techniques')]")).click();       
-		test.pass("");
+		test.pass("Checking section '' - step successful.");
+
 		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+		test.pass("Checking section '' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'Community events')]")).click();       
-		test.pass("");
-		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+		test.pass("Checking section '' - step successful.");
 		
-		test.pass("What we offer section test successful.");
+		driver.findElement(By.xpath("//a[contains(text(),'What we offer')]")).click();       
+		test.pass("Checking section 'What we offer' - step successful.");
 
 		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();       
-		test.pass("");		
+		test.pass("Checking section '' - step successful.");
 		
 		WebElement element = driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]"));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(500); 
 		
-		//driver.findElement(By.xpath("//a[contains(text(),'Delivery Benefits through Pair Programming')]")).click();       
-		test.pass("");
+		test.pass("Checking blog post - step successful.");
+
 		driver.findElement(By.xpath("//a[contains(text(),'Our stories')]")).click();   
+		test.pass("Checking section '' - step successful.");
 		
 	}
 		
