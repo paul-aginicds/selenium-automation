@@ -69,11 +69,11 @@ public class PowerBI_Test_Demo {
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[9]")).click();
 	    test.pass("Checking 'Arrival Mode' - Filter Test 3");	    
 	    
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance])[1]/following::span[1]")).click();
 	    test.pass("Checking 'Arrival Mode' - Filter Test 4");	    
 	    
-	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
-	    test.pass("Checking 'Arrival Mode' - Filter Test 5");	    
+	    //driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
+	    //test.pass("Checking 'Arrival Mode' - Filter Test 5");	    
 	    
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - hospital'])[1]/following::span[1]")).click();
 	    test.pass("Checking 'Arrival Mode' - Filter Test 6");	    
