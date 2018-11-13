@@ -50,6 +50,19 @@ public class PowerBI_Test_Demo {
 		
 	}
 	
+	
+	  @Test
+	  public void testCase2() throws Exception {
+	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[8]/following::div[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[5]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[2]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - hospital'])[2]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - MAS/RAV'])[2]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Other - Private Car/Walking'])[1]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Other - Private Car/Walking'])[1]/following::span[1]")).click();
+	  }
+	
 	@Test
 	public void testPowerBIapp() throws Exception {
 		
@@ -73,7 +86,7 @@ public class PowerBI_Test_Demo {
 	    test.pass("Checking 'Arrival Mode' - Filter Test 4");	    
 	    
 	    //driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Air Ambulance - Fixed Wing'])[1]/following::span[1]")).click();
-	    //test.pass("Checking 'Arrival Mode' - Filter Test 5");	    
+	    test.pass("Checking 'Arrival Mode' - Filter Test 5");	    
 	    
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Ambulance Private - hospital'])[1]/following::span[1]")).click();
 	    test.pass("Checking 'Arrival Mode' - Filter Test 6");	    
