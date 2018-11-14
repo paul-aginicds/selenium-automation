@@ -182,6 +182,13 @@ public class PowerBI_Smoke_Test {
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Not Applicable'])[1]/following::span[1]")).click();
 	  }
 	  
+	  @Test
+	  public void testPageSwitching() throws Exception {
+	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='of'])[1]/following::i[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='of'])[1]/following::i[1]")).click();
+	  }
+	  
 	  /*
 	  @Test
 	  public void testCase2() throws Exception {
