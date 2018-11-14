@@ -1,4 +1,4 @@
-package test;
+package com.aginicds.website.test;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;

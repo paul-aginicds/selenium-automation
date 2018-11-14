@@ -20,7 +20,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-public class PowerBI_Test_Demo {
+public class PowerBI_Smoke_Test {
 
 	private static ExtentReports extent;
 	private static ExtentHtmlReporter htmlReporter;
@@ -51,7 +51,7 @@ public class PowerBI_Test_Demo {
 	}
 	
 	  @Test
-	  public void testCase4() throws Exception {
+	  public void testCase_ArrivalFilters() throws Exception {
 	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[4]/following::div[3]")).click();
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[3]")).click();
