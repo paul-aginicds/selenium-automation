@@ -4,7 +4,7 @@
  
   <test thread-count="5" name="AginicDS_Website_Smoke_Test">
     <classes>
-      <class name="com.aginids.website.test.AginicDS_SmokeTest_Demo"/>
+      <class name="com.aginicds.website.test.AginicDS_SmokeTest_Demo"/>
     </classes>
   </test> 
 
