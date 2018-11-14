@@ -11,20 +11,9 @@
   <test thread-count="5" name="PowerBI_Smoke_Test">
     <classes>
       <class name="com.aginids.powerbi.test.PowerBI_Smoke_Test"/>
-    </classes>
-  </test> 
-
-	<test thread-count="5" name="PowerBI_Smoke_Test">
-    <classes>
       <class name="com.aginids.powerbi.test.PowerBI_Verify_Test"/>
-    </classes>
-  </test> 
-
-	<test thread-count="5" name="PowerBI_Smoke_Test">
-    <classes>
       <class name="com.aginids.powerbi.test.PowerBI_PageSwitch_Test"/>
     </classes>
   </test> 
-
 
 </suite> 
