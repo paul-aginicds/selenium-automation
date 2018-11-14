@@ -50,7 +50,22 @@ public class PowerBI_Test_Demo {
 		
 	}
 	
+	  @Test
+	  public void testCase4() throws Exception {
+	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[4]/following::div[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[4]/following::div[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[2]/following::div[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[2]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[2]/following::div[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[2]/following::div[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[2]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[2]/following::div[3]")).click();
+	  }
 	
+	  /*
 	  @Test
 	  public void testCase2() throws Exception {
 	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
@@ -121,19 +136,20 @@ public class PowerBI_Test_Demo {
         //Assert.fail("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
         //test.addScreenCaptureFromPath("screenshot.png");
 	}
+	*/
 		
 	@AfterTest
 	public void tearDownTest() {
 		driver.close();
 		//driver.quit();
-		test.pass("PowerBI automated test completed successfully! :)");
+		//test.pass("PowerBI automated test completed successfully! :)");
 	}
 	
 	@AfterMethod
 	@AfterSuite
 	public void tearDown() {
 		
-		extent.flush();
+		//extent.flush();
 		
 	}
 	
