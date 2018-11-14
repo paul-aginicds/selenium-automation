@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-
-<!--  
+ 
   <test thread-count="5" name="AginicDS_Website_Smoke_Test">
     <classes>
       <class name="test.AginicDS_SmokeTest_Demo"/>
     </classes>
   </test> 
-  -->
+
   <test thread-count="5" name="PowerBI_Smoke_Test">
     <classes>
       <class name="com.aginids.powerbi.test.PowerBI_Smoke_Test"/>
