@@ -163,6 +163,15 @@ public class PowerBI_Smoke_Test {
 	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='?'])[1]/following::div[8]")).click();
 	  }
 
+	  @Test
+	  public void testCareGroup() throws Exception {
+	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='List'])[16]/following::div[3]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='M'])[1]/following::span[11]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Cardiac Monitored'])[2]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Fast Track'])[1]/following::span[1]")).click();
+	    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='?'])[1]/following::div[8]")).click();
+	  }
 	  
 	  /*
 	  @Test
