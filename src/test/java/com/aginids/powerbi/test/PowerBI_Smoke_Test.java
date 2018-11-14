@@ -52,6 +52,7 @@ public class PowerBI_Smoke_Test {
 		driver = new FirefoxDriver();		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
+		
 	}
 	/*
 	 @Test
