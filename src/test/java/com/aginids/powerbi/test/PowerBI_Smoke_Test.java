@@ -2,6 +2,10 @@ package com.aginids.powerbi.test;
 
 
 import java.util.regex.Pattern;
+
+import static org.testng.Assert.assertEquals;
+
+import java.io.PrintStream;
 import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.AfterMethod;
@@ -25,7 +29,7 @@ public class PowerBI_Smoke_Test {
 	private static ExtentReports extent;
 	private static ExtentHtmlReporter htmlReporter;
 	private static ExtentTest test;
-
+	private StringBuffer verificationErrors = new StringBuffer();
 	
 	WebDriver driver;
 	
@@ -49,7 +53,38 @@ public class PowerBI_Smoke_Test {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 	}
+	/*
+	 @Test
+	  public void testNoEpisodes() throws Exception {
+	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
+	    
+	    String episodes = driver.findElement(By.cssSelector("text.value")).getText();
+	    
+	    System.out.println(episodes);
+	  }
+*/
 	
+	  @Test
+	  public void testNoEpisodes() throws Exception {
+	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
+	    try {
+	      assertEquals(driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Arrivals by Hour and Triage'])[1]/following::span[1]")).getText(), "Admissions");
+	    } catch (Error e) {
+	      verificationErrors.append(e.toString());
+	    }
+	    try {
+	      assertEquals(driver.findElement(By.cssSelector("text.value")).getText(), "399K399K");
+	    } catch (Error e) {
+	      verificationErrors.append(e.toString());
+	    }
+	    try {
+	      assertEquals(driver.findElement(By.xpath("//div[@id='pvExplorationHost']/div/div/div/div[2]/div/div[2]/div[2]/div[8]/div[3]/div[2]/div/div/div/text")).getText(), "Triage 0 - Mental Health");
+	    } catch (Error e) {
+	      verificationErrors.append(e.toString());
+	    }
+	  }	 
+	 
+	 
 	  @Test
 	  public void testArrivalFilters() throws Exception {
 	    driver.get("https://app.powerbi.com/view?r=eyJrIjoiM2VjMDVmZmMtNmMzNi00ZTM3LTgyNWUtODdlNWE0NTA5OTczIiwidCI6IjdhN2U1NDFjLTA1N2YtNDUxNi04ZTcyLTI1ODk1OTA3ZGI3NiIsImMiOjEwfQ%3D%3D");
