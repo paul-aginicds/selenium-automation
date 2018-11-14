@@ -62,7 +62,7 @@ public class PowerBI_Smoke_Test {
 	    
 	    System.out.println(episodes);
 	  }
-*/
+
 	
 	  @Test
 	  public void testNoEpisodes() throws Exception {
@@ -83,7 +83,7 @@ public class PowerBI_Smoke_Test {
 	      verificationErrors.append(e.toString());
 	    }
 	  }	 
-	 
+	 */
 	 
 	  @Test
 	  public void testArrivalFilters() throws Exception {
