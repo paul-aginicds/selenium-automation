@@ -1,4 +1,4 @@
-package test;
+package com.aginids.powerbi.test;
 
 
 import java.util.regex.Pattern;
