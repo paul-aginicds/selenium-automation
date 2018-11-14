@@ -11,7 +11,7 @@
   -->
   <test thread-count="5" name="PowerBI_Smoke_Test">
     <classes>
-      <class name="test.PowerBI_Test_Demo"/>
+      <class name="com.aginids.powerbi.test.PowerBI_Test_Demo"/>
     </classes>
   </test> 
 </suite> 
